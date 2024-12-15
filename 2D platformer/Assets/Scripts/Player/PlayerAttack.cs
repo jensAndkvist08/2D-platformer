@@ -16,7 +16,14 @@ public class PlayerAttack : MonoBehaviour
         {
             GameObject attack = Instantiate(weapon, player.transform.position, transform.rotation);
             Rigidbody2D rb = attack.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.right * weaponSpeed, ForceMode2D.Impulse);
+            if (transform.localScale.x <= 0)
+            {
+                rb.AddForce(transform.right * -weaponSpeed, ForceMode2D.Impulse);
+            }
+            else if (transform.localScale.x >= 0)
+            {
+                rb.AddForce(transform.right * weaponSpeed, ForceMode2D.Impulse);
+            }
             attackOnColdown = true;
             pickUpAttack = false;
             Invoke("PickUpAttackReady", weaponOutTimer);

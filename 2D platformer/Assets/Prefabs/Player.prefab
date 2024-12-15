@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29143570c55eb4489bd5c94d64750b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 5
   iFrameTime: 0.5
 --- !u!114 &-6623117830150363623
 MonoBehaviour:
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 5365916954190103072, guid: b4f6c2d8c688f6c4c96fafbe42c9561c, type: 3}
   player: {fileID: 3206069087741373462}
-  weaponSpeed: 10
+  weaponSpeed: 20
   weaponOutTimer: 2.99
 --- !u!114 &-4904373857032140560
 MonoBehaviour:

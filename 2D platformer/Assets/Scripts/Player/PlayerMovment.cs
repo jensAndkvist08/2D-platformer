@@ -8,6 +8,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float jumpSpeed = 10F;
     [SerializeField] ContactFilter2D groundFilter;
+    [SerializeField] float timeTilLoadExit = 1f;
 
     Rigidbody2D rb;
 
@@ -22,7 +23,7 @@ public class PlayerMovment : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        
+
     }
     void OnJump()
     {
@@ -43,6 +44,23 @@ public class PlayerMovment : MonoBehaviour
         if (moveInput.x != 0)
         {
             transform.localScale = new Vector2(moveInput.x, transform.localScale.y);
+
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Exit"))
+        {
+            Invoke("Quit", timeTilLoadExit);
+        }
+    }
+    public void Quit()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
     }
 }

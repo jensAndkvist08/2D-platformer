@@ -174,5 +174,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe8107e63b80e64ea84f29f603a8f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comeBackTimer: 1.5
-  weaponSpeed: 50
+  comeBackTimer: 1
+  weaponSpeed: 40
